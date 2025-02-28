@@ -2,6 +2,14 @@
 
 Aplicación web para realizar operaciones matemáticas básicas (suma, resta, multiplicación, división) con historial de operaciones.
 
+## **Estado Actual**
+
+🚧 **En desarrollo**:
+
+- Lógica de operaciones básicas (suma, resta, multiplicación, división).
+- Validación de división por cero.
+- Formato de resultados con dos decimales.
+
 ## **Requerimientos Cumplidos**
 
 | ID  | Descripción               | Estado |
