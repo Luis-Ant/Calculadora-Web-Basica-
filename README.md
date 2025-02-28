@@ -7,10 +7,10 @@ Aplicación web para realizar operaciones matemáticas básicas (suma, resta, mu
 | ID  | Descripción               | Estado |
 | --- | ------------------------- | ------ |
 | RQ1 | Operaciones básicas       |        |
-| RQ2 | Interfaz gráfica          |        |
+| RQ2 | Interfaz gráfica          | ✔️     |
 | RQ3 | Resultado con 2 decimales |        |
 | RQ4 | Historial de operaciones  |        |
-| RQ5 | Botones de borrado        |        |
+| RQ5 | Botones de borrado        | ✔️     |
 
 ## **Tecnologías Usadas**
 
@@ -22,5 +22,5 @@ Aplicación web para realizar operaciones matemáticas básicas (suma, resta, mu
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/calculadora-web-basica.git
+   git clone https://github.com/Luis-Ant/Calculadora-Web-Basica-.git
    ```
