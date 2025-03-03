@@ -9,10 +9,10 @@ Aplicación web para realizar operaciones matemáticas básicas (suma, resta, mu
 **Objetivo**: Implementar la lógica del historial de operaciones (RQ4).  
 **Estado Actual**:
 
-- [ ] Almacenar operaciones en un array.
-- [ ] Mostrar historial en la interfaz.
-- [ ] Limitar el historial a las últimas 10 operaciones.
-- [ ] Permitir solo lectura del historial.
+- [✔️] Almacenar operaciones en un array.
+- [✔️] Mostrar historial en la interfaz.
+- [ X ] Limitar el historial a las últimas 10 operaciones.
+- [✔️ ] Permitir solo lectura del historial.
 
 ## **Requerimientos Cumplidos**
 
@@ -21,7 +21,7 @@ Aplicación web para realizar operaciones matemáticas básicas (suma, resta, mu
 | RQ1 | Operaciones básicas       | ✔️     |
 | RQ2 | Interfaz gráfica          | ✔️     |
 | RQ3 | Resultado con 2 decimales | ✔️     |
-| RQ4 | Historial de operaciones  |        |
+| RQ4 | Historial de operaciones  | ✔️     |
 | RQ5 | Botones de borrado        | ✔️     |
 
 ## **Tecnologías Usadas**
