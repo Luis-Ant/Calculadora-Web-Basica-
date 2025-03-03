@@ -10,6 +10,11 @@ Aplicación web para realizar operaciones matemáticas básicas (suma, resta, mu
 - Validación de división por cero.
 - Formato de resultados con dos decimales.
 
+## **Funcionalidades Especiales**
+
+- **Punto decimal**: Solo se permite un punto por número. Ej: `5.3` es válido, `5.3.2` no.
+- **Inicio con punto**: Si se presiona "." primero, se asume `0.`.
+
 ## **Requerimientos Cumplidos**
 
 | ID  | Descripción               | Estado |
