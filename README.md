@@ -4,7 +4,7 @@ Aplicación web para realizar operaciones matemáticas básicas (suma, resta, mu
 
 ## **Estado Actual**
 
-🚧 **En desarrollo**:
+✔️ **Completado**:
 
 - Lógica de operaciones básicas (suma, resta, multiplicación, división).
 - Validación de división por cero.
