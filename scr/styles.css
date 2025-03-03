@@ -14,6 +14,68 @@ body {
     background: #e0e0e0;
 }
 
+/* Contenedor general para la calculadora y el historial */
+.contenedor {
+    display: flex;
+    gap: 20px; /* Espacio entre el historial y la calculadora */
+}
+
+/* Estilos para el contenedor del historial */
+.historial {
+    position: relative; /* Necesario para posicionar el icono dentro */
+    background: #d3d3d3; 
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 220px; /* Ancho fijo del historial */
+    padding-top: 40px; /* Espacio para el botón en la parte superior */
+}
+
+/* Contenedor del encabezado del historial (donde va el botón) */
+.historial-header {
+    position: absolute; /* Para que el botón quede dentro del historial */
+    top: 10px; /* Distancia desde la parte superior */
+    right: 10px; /* Distancia desde la parte derecha */
+}
+
+/* Estilos para el botón del historial */
+.btn.historial-btn {
+    background-color: #fff; /* Sin fondo */
+    border: none;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Ajuste de tamaño de la imagen dentro del botón */
+.btn.historial-btn img {
+    width: 24px; /* Tamaño adecuado del icono */
+    height: 24px;
+}
+
+/* Contenedor de los ítems del historial */
+.historial-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px; /* Espacio entre el botón y las operaciones */
+}
+
+/* Estilo de cada ítem en el historial */
+.historial-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Calculadora */
 .calculadora {
     background: #d3d3d3;
     padding: 20px;
@@ -22,7 +84,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    width: 320px;
+    width: 320px; /* Ancho fijo de la calculadora */
 }
 
 .display {
@@ -50,6 +112,14 @@ body {
     background: #888;
 }
 
+/* Ajuste de imágenes dentro de los botones */
+.btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Botón igual ocupa dos columnas */
 .igual {
     grid-column: span 2;
 }
