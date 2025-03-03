@@ -7,36 +7,51 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="calculadora">
-        <!-- Display -->
-        <div class="display">0.00</div>
-        
-        <!-- Botones -->
-        <button class="btn bor" value="BOR"> <- </button>
-        <button class="btn del" value="DEL"> DEL </button>
-        <button class="btn clr" value="CLR"> CLR </button>
-        <button class="btn operador" value="/"> ÷ </button>
-        
-        <button class="btn" value="7"> 7 </button>
-        <button class="btn" value="8"> 8 </button>
-        <button class="btn" value="9"> 9 </button>
-        <button class="btn operador" value="*"> x </button>
-        
-        <button class="btn" value="4"> 4 </button>
-        <button class="btn" value="5"> 5 </button>
-        <button class="btn" value="6"> 6 </button>
-        <button class="btn operador" value="-"> - </button>
-        
-        <button class="btn" value="1"> 1 </button>
-        <button class="btn" value="2"> 2 </button>
-        <button class="btn" value="3"> 3 </button>
-        <button class="btn operador" value="+"> + </button>
-        
-        <button class="btn" value="."> . </button>
-        <button class="btn cero" value="0"> 0 </button>
-        <button class="btn igual" value="="> = </button>
-    </div>
+    <div class="contenedor">
+        <!-- Historial -->
+        <div class="historial">
+            <div class="historial-header">
+                <button class="btn historial-btn">
+                    <img src="../imgs/Flecha.png" alt="Historial">
+                </button>  
+            </div>
+            <div class="historial-items">
+                <div class="historial-item">2 + 2 = 4</div>
+                <div class="historial-item">5 x 3 = 15</div>
+                <!-- Se quita los divs que tengan operaciones y programa en js para que se muestren todas las operaciones -->
+            </div>
+        </div>
 
+        <div class="calculadora">
+            <!-- Display -->
+            <div class="display">0.00</div>
+            
+            <!-- Botones -->
+            <button class="btn bor" value="BOR"> <- </button>
+            <button class="btn del" value="DEL"> DEL </button>
+            <button class="btn clr" value="CLR"> CLR </button>
+            <button class="btn operador" value="/"> ÷ </button>
+            
+            <button class="btn" value="7"> 7 </button>
+            <button class="btn" value="8"> 8 </button>
+            <button class="btn" value="9"> 9 </button>
+            <button class="btn operador" value="*"> x </button>
+            
+            <button class="btn" value="4"> 4 </button>
+            <button class="btn" value="5"> 5 </button>
+            <button class="btn" value="6"> 6 </button>
+            <button class="btn operador" value="-"> - </button>
+            
+            <button class="btn" value="1"> 1 </button>
+            <button class="btn" value="2"> 2 </button>
+            <button class="btn" value="3"> 3 </button>
+            <button class="btn operador" value="+"> + </button>
+            
+            <button class="btn" value="."> . </button>
+            <button class="btn cero" value="0"> 0 </button>
+            <button class="btn igual" value="="> = </button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
