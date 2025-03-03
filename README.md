@@ -4,7 +4,7 @@ Aplicación web para realizar operaciones matemáticas básicas (suma, resta, mu
 
 ## **Estado Actual**
 
-## **Desarrollo en Curso**
+## **Completado**
 
 **Objetivo**: Implementar la lógica del historial de operaciones (RQ4).  
 **Estado Actual**:
