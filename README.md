@@ -19,9 +19,9 @@ Aplicación web para realizar operaciones matemáticas básicas (suma, resta, mu
 
 | ID  | Descripción               | Estado |
 | --- | ------------------------- | ------ |
-| RQ1 | Operaciones básicas       |        |
+| RQ1 | Operaciones básicas       | ✔️     |
 | RQ2 | Interfaz gráfica          | ✔️     |
-| RQ3 | Resultado con 2 decimales |        |
+| RQ3 | Resultado con 2 decimales | ✔️     |
 | RQ4 | Historial de operaciones  |        |
 | RQ5 | Botones de borrado        | ✔️     |
 
