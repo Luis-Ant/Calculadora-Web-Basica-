@@ -46,6 +46,6 @@ Esta es la **versión 1.0** de la calculadora, con las siguientes funcionalidade
 
 ## **Captura de Pantalla** 🖼️
 
----
+## ![alt text]({EC1E698D-F9E5-4E52-AE60-2FCE48276F57}.png)
 
 📌 **Repositorio:** [Calculadora Web Básica](https://github.com/Luis-Ant/Calculadora-Web-Basica-)
