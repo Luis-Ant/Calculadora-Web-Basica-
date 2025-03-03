@@ -32,6 +32,8 @@ body {
     justify-content: flex-start;
     width: 220px; /* Ancho fijo del historial */
     padding-top: 40px; /* Espacio para el botón en la parte superior */
+    max-height: 435px; /* Altura máxima del historial */
+    overflow-y: auto; /* Habilitar desplazamiento vertical */
 }
 
 /* Contenedor del encabezado del historial (donde va el botón) */

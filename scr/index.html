@@ -15,11 +15,7 @@
                     <img src="../imgs/Flecha.png" alt="Historial">
                 </button>  
             </div>
-            <div class="historial-items">
-                <div class="historial-item">2 + 2 = 4</div>
-                <div class="historial-item">5 x 3 = 15</div>
-                <!-- Se quita los divs que tengan operaciones y programa en js para que se muestren todas las operaciones -->
-            </div>
+            <div class="historial-items"></div>
         </div>
 
         <div class="calculadora">
@@ -27,7 +23,9 @@
             <div class="display">0.00</div>
             
             <!-- Botones -->
-            <button class="btn bor" value="BOR"> <img src="../imgs/Borrador.png" alt="Borrar"> </button>
+            <button class="btn bor" value="BOR" id="btn-bor"> 
+                <img src="../imgs/Borrador.png" alt="Borrar" id="img-bor"> 
+            </button>
             <button class="btn del" value="DEL"> DEL </button>
             <button class="btn clr" value="CLR"> CLR </button>
             <button class="btn operador" value="/"> ÷ </button>

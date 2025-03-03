@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarDisplay();
 });
 
+document.getElementById('img-bor').addEventListener('click', function(event) {
+    event.stopPropagation();
+    document.getElementById('btn-bor').click();
+});
+
 // Función para manejar clics
 function manejarClic(evento) {
     const valorBoton = evento.target.value;
@@ -102,14 +107,21 @@ function borrarUltimoDigito() {
 }
 
 // Borrar operacion escrita
-
+function borrarOperacionEscrita() {
+    displayValue = "0.00";
+    operacionActual = "";
+    actualizarDisplay();
+}
 
 // Borrar todo
 function borrarTodo() {
     displayValue = "0.00";
     operacionActual = "";
+    historial = [];
+    actualizarHistorial();
     actualizarDisplay();
 }
+
 
 // Calcular resultado
 function calcularResultado() {
@@ -119,8 +131,8 @@ function calcularResultado() {
         if (resultado === "Infinity") throw new Error("División por cero");
         
         // Guardar en historial
-        //historial.push({ operacion: displayValue, resultado });
-        //actualizarHistorial();
+        historial.push({ operacion: displayValue, resultado });
+        actualizarHistorial();
 
         // Actualizar display y preparar nueva operación
         displayValue = resultado;
@@ -131,4 +143,17 @@ function calcularResultado() {
         displayValue = "Error";
         actualizarDisplay();
     }
+}
+
+// Actualizar historial
+function actualizarHistorial() {
+    const historialElement = document.querySelector(".historial-items");
+    historialElement.innerHTML = "";
+
+    historial.forEach((element, index) => {
+        const item = document.createElement("div");
+        item.className = "historial-item";
+        item.textContent = `${element.operacion} = ${element.resultado}`;
+        historialElement.appendChild(item);
+    });
 }
