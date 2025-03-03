@@ -4,16 +4,15 @@ Aplicación web para realizar operaciones matemáticas básicas (suma, resta, mu
 
 ## **Estado Actual**
 
-🚧 **En desarrollo**:
+## **Desarrollo en Curso**
 
-- Lógica de operaciones básicas (suma, resta, multiplicación, división).
-- Validación de división por cero.
-- Formato de resultados con dos decimales.
+**Objetivo**: Implementar la lógica del historial de operaciones (RQ4).  
+**Estado Actual**:
 
-## **Funcionalidades Especiales**
-
-- **Punto decimal**: Solo se permite un punto por número. Ej: `5.3` es válido, `5.3.2` no.
-- **Inicio con punto**: Si se presiona "." primero, se asume `0.`.
+- [ ] Almacenar operaciones en un array.
+- [ ] Mostrar historial en la interfaz.
+- [ ] Limitar el historial a las últimas 10 operaciones.
+- [ ] Permitir solo lectura del historial.
 
 ## **Requerimientos Cumplidos**
 
