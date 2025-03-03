@@ -8,7 +8,6 @@ Esta es la **versión 1.0** de la calculadora, con las siguientes funcionalidade
 
 - Realización de operaciones básicas.
 - Interfaz intuitiva y fácil de usar.
-- Historial de operaciones reciente (hasta 10 operaciones).
 - Botón de borrado para limpiar resultados y historial.
 - Resultados mostrados con dos decimales.
 
