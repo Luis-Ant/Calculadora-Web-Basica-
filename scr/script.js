@@ -2,6 +2,7 @@
 let displayValue = "0.00";  // Almacena el valor actual del display
 let operacionActual = "";   // Guarda la operación en curso
 let historial = [];         // Array para el historial de operaciones
+let resultadoMostrado = false; // Indica si el último valor mostrado es un resultado
 
 document.addEventListener("DOMContentLoaded", () => {
     // Vincular todos los botones a la función manejarClic
@@ -37,13 +38,16 @@ function manejarClic(evento) {
         case "CE":
             borrarTodo();
             break;
+        case "DEL":
+            borrarUltimaOperacion();
+            break;
         case "=":
             calcularResultado();
             break;
         case "%":    
-        case "+":
-        case "-":
-        case "*":
+        case "+":    
+        case "-":    
+        case "*":    
         case "/":
             agregarOperador(valorBoton);
             break;
@@ -67,39 +71,49 @@ function esNumero(valor) {
 
 // Agregar numeros al display
 function agregarNumero(numero) {
-    if (displayValue === "0.00" || displayValue === "Error") {
+    if (resultadoMostrado) {
         displayValue = numero === "." ? "0." : numero;
+        resultadoMostrado = false;
     } else {
-        // Evitar múltiples puntos en el mismo número
-        const ultimoCaracter = displayValue.split(" ").pop(); // Obtener el último número u operador
-        if (numero === "." && ultimoCaracter.includes(".")) {
-            return; // Si ya hay un punto, no hacer nada
+        if (displayValue === "0.00" || displayValue === "Error") {
+            displayValue = numero === "." ? "0." : numero;
+        } else {
+            // Evitar múltiples puntos en el mismo número
+            const ultimoCaracter = displayValue.split(" ").pop(); // Obtener el último número u operador
+            if (numero === "." && ultimoCaracter.includes(".")) {
+                return; // Si ya hay un punto, no hacer nada
+            }
+            displayValue += numero;
         }
-        displayValue += numero;
     }
     actualizarDisplay();
 }
 
 // Agregar operador al display
 function agregarOperador(operador) {
-    if (displayValue != "0.00") {
+    if (displayValue != "0.00" && displayValue != "Error") {
         displayValue += " " + operador + " ";
-    }
-        
-    else {
+    } else {
         if(operador === "-") {
             displayValue = "- ";
         } else{
             displayValue = "0.00";
         }
     }
+    resultadoMostrado = false;
+    ultimaOperacion = displayValue;
     actualizarDisplay();
 }
 
 // Calcular resultado
 function calcularResultado() {
+    if (displayValue === "0.00" || displayValue === "Error") {
+        return; // No hacer nada si el display está en "0.00" o "Error"
+    }
+
     try {
-        const resultado = parseFloat(eval(displayValue)).toFixed(2);
+        let operacion = displayValue;
+        const resultado = parseFloat(eval(operacion)).toFixed(2);
 
         if (resultado === "Infinity") throw new Error("División por cero");
         
@@ -110,6 +124,7 @@ function calcularResultado() {
         // Actualizar display y preparar nueva operación
         displayValue = resultado;
         operacionActual = "";
+        resultadoMostrado = true;
         actualizarDisplay();
 
     } catch (error) {
@@ -141,6 +156,19 @@ function borrarTodo() {
     operacionActual = "";
     historial = [];
     actualizarHistorial();
+    actualizarDisplay();
+}
+
+// Borrar ultima operacion
+function borrarUltimaOperacion() {
+    if (displayValue !== "0.00") {
+        displayValue = displayValue.split(" ").slice(0, -2).join(" ");
+        actualizarDisplay();
+    }
+
+    if (displayValue === "") {
+        displayValue = "0.00";
+    }
     actualizarDisplay();
 }
 

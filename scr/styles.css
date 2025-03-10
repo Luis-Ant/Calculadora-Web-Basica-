@@ -34,11 +34,19 @@ body {
     overflow-y: auto; /* Habilitar desplazamiento vertical */
 }
 
+/* Contenedor del encabezado del historial (donde va el botón) */
+.historial-header {
+    position: absolute; /* Para que el botón quede dentro del historial */
+    top: 10px; /* Distancia desde la parte superior */
+    right: 10px; /* Distancia desde la parte derecha */
+}
+
 /* Contenedor de los ítems del historial */
 .historial-items {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espacio entre los ítems */
+    gap: 10px;
+    margin-top: 40px; /* Espacio entre el botón y las operaciones */
 }
 
 /* Estilo de cada ítem en el historial */
@@ -51,7 +59,7 @@ body {
 }
 
 /* Estilos para el botón del historial */
-.btn.historial-btn {
+.btn.historial-btn{
     background-color: #fff; /* Sin fondo */
     border: none;
     padding: 5px;
@@ -100,10 +108,18 @@ body {
     transition: background 0.3s;
 }
 
+.btn.bor{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
 /* Ajuste de tamaño de la imagen dentro del botón */
 .btn.bor img {
-    width: 24px; /* Tamaño adecuado del icono */
-    height: 24px;
+    width: 35px; /* Tamaño adecuado del icono */
+    height: 25px;
 }
 
 .btn:hover {

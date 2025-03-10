@@ -1,19 +1,19 @@
-# **Calculadora Web Básica - Versión 1.0**
+# **Calculadora Web Básica - Versión 2.0**
 
 Aplicación web para realizar operaciones matemáticas básicas (suma, resta, multiplicación, división) con historial de operaciones.
 
 ## **Estado Actual** ✅
 
-Esta es la **versión 1.0** de la calculadora, con las siguientes funcionalidades implementadas:
+Esta es la **versión 2.0** de la calculadora, con las siguientes mejoras implementadas:
 
-- Realización de operaciones básicas.
-- Interfaz intuitiva y fácil de usar.
-- Botón de borrado para limpiar resultados y historial.
-- Resultados mostrados con dos decimales.
+- **Nuevo botón de porcentaje** para realizar cálculos porcentuales.
+- **Corrección de errores** detectados en la versión anterior.
+- **Interfaz optimizada** para una mejor experiencia de usuario.
+- **Resultados precisos** con dos decimales.
 
 ## **Características Principales** ✨
 
-✔️ **Operaciones matemáticas:** suma, resta, multiplicación y división.
+✔️ **Operaciones matemáticas:** suma, resta, multiplicación, división y porcentaje.
 ✔️ **Historial de operaciones:** se almacena y muestra en la interfaz.
 ✔️ **Diseño responsivo:** compatible con dispositivos móviles y escritorio.
 ✔️ **Interfaz clara y moderna:** Diseñada con HTML, CSS y JavaScript puro.
@@ -27,6 +27,8 @@ Esta es la **versión 1.0** de la calculadora, con las siguientes funcionalidade
 | RQ3 | Resultado con 2 decimales | ✔️     |
 | RQ4 | Historial de operaciones  | ✔️     |
 | RQ5 | Botones de borrado        | ✔️     |
+| RQ6 | Botón de porcentaje       | ✔️     |
+| RQ7 | Corrección de errores     | ✔️     |
 
 ## **Tecnologías Usadas** 🛠️
 
@@ -40,8 +42,12 @@ Esta es la **versión 1.0** de la calculadora, con las siguientes funcionalidade
    ```bash
    git clone https://github.com/Luis-Ant/Calculadora-Web-Basica-.git
    ```
-2. Abre el archivo `index.html` en tu navegador.
-3. ¡Disfruta de tu calculadora con historial de operaciones! 🎉
+2. Cambia a la versión 2.0 con:
+   ```bash
+   git checkout v2.0
+   ```
+3. Abre el archivo `index.html` en tu navegador.
+4. ¡Disfruta de tu calculadora con historial de operaciones! 🎉
 
 ## **Captura de Pantalla** 🖼️
 
