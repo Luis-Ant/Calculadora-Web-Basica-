@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -24,23 +23,31 @@ body {
 .historial {
     position: relative; /* Necesario para posicionar el icono dentro */
     background: #d3d3d3; 
-    border-radius: 15px;
+    border-radius: 16px;
     padding: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 220px; /* Ancho fijo del historial */
-    padding-top: 40px; /* Espacio para el botón en la parte superior */
     max-height: 435px; /* Altura máxima del historial */
     overflow-y: auto; /* Habilitar desplazamiento vertical */
 }
 
-/* Contenedor del encabezado del historial (donde va el botón) */
-.historial-header {
-    position: absolute; /* Para que el botón quede dentro del historial */
-    top: 10px; /* Distancia desde la parte superior */
-    right: 10px; /* Distancia desde la parte derecha */
+/* Contenedor de los ítems del historial */
+.historial-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los ítems */
+}
+
+/* Estilo de cada ítem en el historial */
+.historial-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos para el botón del historial */
@@ -60,42 +67,25 @@ body {
     height: 24px;
 }
 
-/* Contenedor de los ítems del historial */
-.historial-items {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px; /* Espacio entre el botón y las operaciones */
-}
-
-/* Estilo de cada ítem en el historial */
-.historial-item {
-    background: #fff;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 16px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
 /* Calculadora */
 .calculadora {
     background: #d3d3d3;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 16px;
     box-shadow: 0 0 15px rgba(238, 238, 238, 0.3);
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
     gap: 10px;
     width: 320px; /* Ancho fijo de la calculadora */
 }
 
 .display {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* Ocupa todas las columnas */
     background: #fff;
     padding: 20px;
     font-size: 24px;
     text-align: right;
-    border-radius: 5px;
+    border-radius: 16px;
     margin-bottom: 10px;
 }
 
@@ -110,18 +100,26 @@ body {
     transition: background 0.3s;
 }
 
+/* Ajuste de tamaño de la imagen dentro del botón */
+.btn.bor img {
+    width: 24px; /* Tamaño adecuado del icono */
+    height: 24px;
+}
+
 .btn:hover {
     background: #888;
 }
 
-/* Ajuste de imágenes dentro de los botones */
-.btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+/* Estilos para el historial oculto */
+.historial.oculto {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Botón igual ocupa dos columnas */
-.igual {
-    grid-column: span 2;
+/* Estilos para el historial visible */
+.historial.visible {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }

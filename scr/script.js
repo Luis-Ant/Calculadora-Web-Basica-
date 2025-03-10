@@ -6,15 +6,21 @@ let historial = [];         // Array para el historial de operaciones
 document.addEventListener("DOMContentLoaded", () => {
     // Vincular todos los botones a la función manejarClic
     const botones = document.querySelectorAll(".btn");
-    botones.forEach(boton => boton.addEventListener("click", manejarClic));
+    botones.forEach(boton => {
+        boton.addEventListener("click", manejarClic);
+        
+        // Si el botón contiene una imagen, también vincular el evento de clic a la imagen
+        const imagen = boton.querySelector("img");
+        if (imagen) {
+            imagen.addEventListener("click", (event) => {
+                event.stopPropagation();
+                boton.click();
+            });
+        }
+    });
     
     // Inicializar display
     actualizarDisplay();
-});
-
-document.getElementById('img-bor').addEventListener('click', function(event) {
-    event.stopPropagation();
-    document.getElementById('btn-bor').click();
 });
 
 // Función para manejar clics
@@ -22,18 +28,19 @@ function manejarClic(evento) {
     const valorBoton = evento.target.value;
 
     switch (valorBoton) {
+        case "HIS":
+            toggleHistorial();
+            break;
         case "BOR":
             borrarUltimoDigito();
             break;
-        case "DEL":
-            borrarOperacionEscrita();
-            break;
-        case "CLR":
+        case "CE":
             borrarTodo();
             break;
         case "=":
             calcularResultado();
             break;
+        case "%":    
         case "+":
         case "-":
         case "*":
@@ -89,40 +96,6 @@ function agregarOperador(operador) {
     actualizarDisplay();
 }
 
-// Borrar ultimo digito
-function borrarUltimoDigito() {
-    if (displayValue !== "0.00") {
-
-        if (displayValue[displayValue.length - 1] === " "){
-            displayValue = displayValue.slice(0, -2);
-        }
-
-        displayValue = displayValue.slice(0, -1);
-
-        if (displayValue === "") {
-            displayValue = "0.00";
-        }
-        actualizarDisplay();
-    }
-}
-
-// Borrar operacion escrita
-function borrarOperacionEscrita() {
-    displayValue = "0.00";
-    operacionActual = "";
-    actualizarDisplay();
-}
-
-// Borrar todo
-function borrarTodo() {
-    displayValue = "0.00";
-    operacionActual = "";
-    historial = [];
-    actualizarHistorial();
-    actualizarDisplay();
-}
-
-
 // Calcular resultado
 function calcularResultado() {
     try {
@@ -145,6 +118,32 @@ function calcularResultado() {
     }
 }
 
+// Borrar ultimo digito
+function borrarUltimoDigito() {
+    if (displayValue !== "0.00") {
+        
+        if (displayValue[displayValue.length - 1] === " "){
+            displayValue = displayValue.slice(0, -2);
+        }
+
+        displayValue = displayValue.slice(0, -1);
+
+        if (displayValue === "") {
+            displayValue = "0.00";
+        }
+        actualizarDisplay();
+    }
+}
+
+// Borrar todo
+function borrarTodo() {
+    displayValue = "0.00";
+    operacionActual = "";
+    historial = [];
+    actualizarHistorial();
+    actualizarDisplay();
+}
+
 // Actualizar historial
 function actualizarHistorial() {
     const historialElement = document.querySelector(".historial-items");
@@ -156,4 +155,17 @@ function actualizarHistorial() {
         item.textContent = `${element.operacion} = ${element.resultado}`;
         historialElement.appendChild(item);
     });
+}
+
+// Mostrar historial
+function toggleHistorial() {
+    const historialElement = document.querySelector(".historial");
+    historialVisible = !historialVisible;
+    if (historialVisible) {
+        historialElement.classList.remove("oculto");
+        historialElement.classList.add("visible");
+    } else {
+        historialElement.classList.remove("visible");
+        historialElement.classList.add("oculto");
+    }
 }
