@@ -71,7 +71,7 @@ Esta es la **versión 3.0** de la calculadora, con las siguientes mejoras:
 
 ## **Captura de Pantalla** 🖼️
 
-## ![alt text]({EC1E698D-F9E5-4E52-AE60-2FCE48276F57}.png)
+## ![alt text]({8636102E-C35C-4F7E-B280-345A16668864}.png)
 
 📌 **Repositorio:** [Calculadora Web Básica](https://github.com/Luis-Ant/Calculadora-Web-Basica-)
 
