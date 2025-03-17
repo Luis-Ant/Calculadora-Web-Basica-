@@ -1,3 +1,6 @@
+/* Importar la fuente Orbitron desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +33,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     width: 220px; /* Ancho fijo del historial */
-    max-height: 435px; /* Altura máxima del historial */
+    max-height: 500px; /* Altura máxima del historial */
     overflow-y: auto; /* Habilitar desplazamiento vertical */
 }
 
@@ -95,6 +98,8 @@ body {
     text-align: right;
     border-radius: 16px;
     margin-bottom: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Orbitron', sans-serif; /* Fuente para los números */
 }
 
 .btn {
@@ -124,6 +129,29 @@ body {
 
 .btn:hover {
     background: #888;
+}
+
+/* Botones de memoria más pequeños */
+.btn.m {
+    font-size: 16px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: span 1; /* Ocupan una columna */
+}
+
+/* Contenedor para centrar los botones de memoria */
+.memoria-container {
+    grid-column: span 4; /* Ocupa todas las columnas */
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre los botones de memoria */
 }
 
 /* Estilos para el historial oculto */

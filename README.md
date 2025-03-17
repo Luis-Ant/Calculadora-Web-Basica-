@@ -1,40 +1,60 @@
-# **Calculadora Web Básica - Versión 2.0**
+# **Calculadora Web Básica - Versión 3.0 Final** 🎉
 
-Aplicación web para realizar operaciones matemáticas básicas (suma, resta, multiplicación, división) con historial de operaciones.
+Aplicación web para realizar operaciones matemáticas básicas, cálculos porcentuales y gestionar una memoria temporal.  
+**¡Nuevas funciones de memoria agregadas!**
+
+---
 
 ## **Estado Actual** ✅
 
-Esta es la **versión 2.0** de la calculadora, con las siguientes mejoras implementadas:
+Esta es la **versión 3.0** de la calculadora, con las siguientes mejoras:
 
-- **Nuevo botón de porcentaje** para realizar cálculos porcentuales.
-- **Corrección de errores** detectados en la versión anterior.
-- **Interfaz optimizada** para una mejor experiencia de usuario.
-- **Resultados precisos** con dos decimales.
+- **Funcionalidad de memoria:** Guardar, sumar, restar y borrar valores en memoria.
+- **Interfaz mejorada:** Botones de memoria integrados al diseño.
+- **Optimización de código:** Lógica más eficiente y legible.
+
+---
 
 ## **Características Principales** ✨
 
-✔️ **Operaciones matemáticas:** suma, resta, multiplicación, división y porcentaje.
-✔️ **Historial de operaciones:** se almacena y muestra en la interfaz.
-✔️ **Diseño responsivo:** compatible con dispositivos móviles y escritorio.
-✔️ **Interfaz clara y moderna:** Diseñada con HTML, CSS y JavaScript puro.
+✔️ **Operaciones básicas:** Suma, resta, multiplicación, división y porcentaje.  
+✔️ **Historial de operaciones:** Visualización de las últimas 10 operaciones.  
+✔️ **Memoria temporal:**
+
+- `MS`: Guarda el valor del display en memoria.
+- `M+`: Suma el valor del display al valor guardado.
+- `M-`: Resta el valor del display al valor guardado.
+- `MC`: Borra la memoria.  
+  ✔️ **Diseño responsivo:** Compatible con móviles y escritorio.  
+  ✔️ **Resultados precisos:** Formato de dos decimales.
+
+---
 
 ## **Requerimientos Cumplidos** 📌
 
-| ID  | Descripción               | Estado |
-| --- | ------------------------- | ------ |
-| RQ1 | Operaciones básicas       | ✔️     |
-| RQ2 | Interfaz gráfica          | ✔️     |
-| RQ3 | Resultado con 2 decimales | ✔️     |
-| RQ4 | Historial de operaciones  | ✔️     |
-| RQ5 | Botones de borrado        | ✔️     |
-| RQ6 | Botón de porcentaje       | ✔️     |
-| RQ7 | Corrección de errores     | ✔️     |
+| ID   | Descripción                   | Estado |
+| ---- | ----------------------------- | ------ |
+| RQ1  | Operaciones básicas           | ✔️     |
+| RQ2  | Interfaz gráfica              | ✔️     |
+| RQ3  | Resultado con 2 decimales     | ✔️     |
+| RQ4  | Historial de operaciones      | ✔️     |
+| RQ5  | Botones de borrado            | ✔️     |
+| RQ6  | Botón de porcentaje           | ✔️     |
+| RQ7  | Corrección de errores         | ✔️     |
+| RQ8  | Guardar valor en memoria (MS) | ✔️     |
+| RQ9  | Sumar valor a memoria (M+)    | ✔️     |
+| RQ10 | Restar valor de memoria (M-)  | ✔️     |
+| RQ11 | Borrar memoria (MC)           | ✔️     |
+
+---
 
 ## **Tecnologías Usadas** 🛠️
 
-- **HTML5** → Estructura de la calculadora.
-- **CSS3** → Estilos con Grid y Flexbox.
-- **JavaScript Vanilla** → Lógica de operaciones e historial.
+- **HTML5** → Estructura semántica.
+- **CSS3** → Diseño con Grid y Flexbox.
+- **JavaScript Vanilla** → Lógica de operaciones, historial y memoria.
+
+---
 
 ## **Instalación y Uso** 🚀
 
@@ -42,9 +62,9 @@ Esta es la **versión 2.0** de la calculadora, con las siguientes mejoras implem
    ```bash
    git clone https://github.com/Luis-Ant/Calculadora-Web-Basica-.git
    ```
-2. Cambia a la versión 2.0 con:
+2. Cambia a la versión 3.0 con:
    ```bash
-   git checkout v2.0
+   git checkout v3.0
    ```
 3. Abre el archivo `index.html` en tu navegador.
 4. ¡Disfruta de tu calculadora con historial de operaciones! 🎉
@@ -54,3 +74,5 @@ Esta es la **versión 2.0** de la calculadora, con las siguientes mejoras implem
 ## ![alt text]({EC1E698D-F9E5-4E52-AE60-2FCE48276F57}.png)
 
 📌 **Repositorio:** [Calculadora Web Básica](https://github.com/Luis-Ant/Calculadora-Web-Basica-)
+
+**¡Gracias por usar la Calculadora Web Básica! 🚀**

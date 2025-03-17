@@ -1,6 +1,6 @@
 // Variables globales
 let displayValue = "0.00";  // Almacena el valor actual del display
-let operacionActual = "";   // Guarda la operación en curso
+let memoria = "0.00";   // Guarda el mumero en la memoria
 let historial = [];         // Array para el historial de operaciones
 let resultadoMostrado = false; // Indica si el último valor mostrado es un resultado
 
@@ -29,6 +29,18 @@ function manejarClic(evento) {
     const valorBoton = evento.target.value;
 
     switch (valorBoton) {
+        case "MS":
+            guardarMemoria();
+            break;
+        case "M+":
+            sumarMemoria();
+            break;
+        case "M-":
+            restarMemoria();
+            break;
+        case "MC":
+            borrarMemoria();
+            break;
         case "HIS":
             toggleHistorial();
             break;
@@ -91,23 +103,31 @@ function agregarNumero(numero) {
 
 // Agregar operador al display
 function agregarOperador(operador) {
-    if (displayValue != "0.00" && displayValue != "Error") {
-        displayValue += " " + operador + " ";
-    } else {
-        if(operador === "-") {
-            displayValue = "- ";
-        } else{
+    if (displayValue === "0.00" || displayValue === "Error") {
+        if (operador === "-") {
+            displayValue = "-";
+        } else {
             displayValue = "0.00";
         }
+    } else {
+        // Evitar agregar otro signo "-" si ya está presente
+        if (displayValue === "-") {
+            return;
+        }
+
+        if (displayValue.slice(-2) === "+ " || displayValue.slice(-2) === "- " || displayValue.slice(-2) === "* " || displayValue.slice(-2) === "/ " || displayValue.slice(-2) === "% ") {
+            displayValue = displayValue.slice(0, -2);
+        }
+
+        displayValue += " " + operador + " ";
     }
     resultadoMostrado = false;
-    ultimaOperacion = displayValue;
     actualizarDisplay();
 }
 
 // Calcular resultado
 function calcularResultado() {
-    if (displayValue === "0.00" || displayValue === "Error") {
+    if (displayValue === "0.00" || displayValue === "Error" || resultadoMostrado) {
         return; // No hacer nada si el display está en "0.00" o "Error"
     }
 
@@ -115,7 +135,7 @@ function calcularResultado() {
         let operacion = displayValue;
         const resultado = parseFloat(eval(operacion)).toFixed(2);
 
-        if (resultado === "Infinity") throw new Error("División por cero");
+        if (resultado === "Infinity" || resultado === "NaN") throw new Error("División por cero");
         
         // Guardar en historial
         historial.push({ operacion: displayValue, resultado });
@@ -123,7 +143,6 @@ function calcularResultado() {
 
         // Actualizar display y preparar nueva operación
         displayValue = resultado;
-        operacionActual = "";
         resultadoMostrado = true;
         actualizarDisplay();
 
@@ -135,6 +154,11 @@ function calcularResultado() {
 
 // Borrar ultimo digito
 function borrarUltimoDigito() {
+    if (displayValue === "Error") {
+        displayValue = "0.00";
+        actualizarDisplay();
+    }
+
     if (displayValue !== "0.00") {
         
         if (displayValue[displayValue.length - 1] === " "){
@@ -143,7 +167,7 @@ function borrarUltimoDigito() {
 
         displayValue = displayValue.slice(0, -1);
 
-        if (displayValue === "") {
+        if (displayValue === "" || displayValue === "Error") {
             displayValue = "0.00";
         }
         actualizarDisplay();
@@ -153,7 +177,7 @@ function borrarUltimoDigito() {
 // Borrar todo
 function borrarTodo() {
     displayValue = "0.00";
-    operacionActual = "";
+    memoria = "0.00";
     historial = [];
     actualizarHistorial();
     actualizarDisplay();
@@ -170,6 +194,65 @@ function borrarUltimaOperacion() {
         displayValue = "0.00";
     }
     actualizarDisplay();
+}
+
+// Guardar numero en la memoria
+function guardarMemoria() {
+    const displayNumero = parseFloat(displayValue);
+
+    // Verificar si displayValue es un número válido
+    if (!isNaN(displayNumero)) {
+        memoria = displayNumero.toFixed(2);
+        resultadoMostrado = true;
+        actualizarDisplay();
+    } else {
+        displayValue = "Error";
+        actualizarDisplay();
+    }
+}
+
+// Sumar numero en la memoria
+function sumarMemoria() {
+    // Convertir memoria y displayValue a números
+    const memoriaNumero = parseFloat(memoria);
+    const displayNumero = parseFloat(displayValue);
+
+    // Verificar si ambos son números válidos
+    if (!isNaN(memoriaNumero) && !isNaN(displayNumero)) {
+        memoria = (memoriaNumero + displayNumero).toFixed(2);
+        displayValue = memoria;
+        resultadoMostrado = true;
+        actualizarDisplay();
+    } else {
+        displayValue = "Error";
+        actualizarDisplay();
+    }
+}
+
+// Restar numero en la memoria
+function restarMemoria() {
+    // Convertir memoria y displayValue a números
+    const memoriaNumero = parseFloat(memoria);
+    const displayNumero = parseFloat(displayValue);
+
+    // Verificar si ambos son números válidos
+    if (!isNaN(memoriaNumero) && !isNaN(displayNumero)) {
+        memoria = (memoriaNumero - displayNumero).toFixed(2);
+        displayValue = memoria;
+        resultadoMostrado = true;
+        actualizarDisplay();
+    } else {
+        displayValue = "Error";
+        actualizarDisplay();
+    }
+}
+
+// Borrar memoria
+function borrarMemoria() {
+    memoria = "0.00";
+    displayValue = memoria;
+    resultadoMostrado = true;
+    actualizarDisplay(); 
 }
 
 // Actualizar historial
